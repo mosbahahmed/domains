@@ -103,12 +103,12 @@
   /* ── HERO ── */
   .hero {
     position: relative; z-index: 1;
-    display: flex; align-items: center;
-    padding: 120px 60px 80px;
-    gap: 60px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 120px 60px 30px;
+    text-align: center;
   }
 
-  .hero-left { flex: 1; max-width: 600px; }
+  .hero-center { max-width: 720px; display: flex; flex-direction: column; align-items: center; }
 
   .hero-tag {
     display: inline-block;
@@ -135,7 +135,7 @@
 
   .hero-desc {
     font-size: 1.05rem; color: var(--text-muted);
-    line-height: 1.75; max-width: 480px; margin-bottom: 40px;
+    line-height: 1.75; max-width: 560px; margin-bottom: 40px;
   }
 
   .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
@@ -238,7 +238,7 @@
   /* ── DOMAINS GRID ── */
   .domains-section {
     position: relative; z-index: 1;
-    padding: 50px 60px 100px;
+    padding: 20px 60px 100px;
   }
 
   .section-header {
@@ -474,7 +474,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
+  <div class="hero-center">
     <div class="hero-tag fade-up">🌐 Premium Domain Portfolio</div>
     <h1 class="fade-up">Secure Your <span>Digital Address</span> Before Someone Else Does</h1>
     <p class="hero-desc fade-up">
@@ -484,9 +484,7 @@
     <div class="hero-actions fade-up">
       <span style="font-size:0.9rem; color:var(--text-muted);">🔒 Secured via Afternic</span>
     </div>
-
   </div>
-
 </section>
 
 

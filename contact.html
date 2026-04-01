@@ -324,10 +324,10 @@
             <p>Buying multiple domains? Let's talk a deal</p>
           </div>
         </div>
-        </div>
+
       </div>
     </div>
-  </div>
+
     <!-- FORM -->
     <div class="contact-form-wrap">
       <div class="form-title">Send a Message</div>
@@ -399,14 +399,14 @@
         ✅ Your message has been sent! We'll get back to you within 24 hours.
       </div>
       <div class="alert error" id="errorMsg">
-        ❌ Something went wrong. Please try later
+        ❌ Something went wrong. Please email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afcecbc2c0dccdcec7efc8c2cec6c381ccc0c2">[email&#160;protected]</a>
       </div>
     </div>
 
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── EmailJS Setup ──
   // To activate email sending:
   // 1. Go to https://www.emailjs.com and create a free account
@@ -417,9 +417,9 @@
   // 4. Get your Public Key from Account > API Keys
   // 5. Replace the placeholders below with your real IDs
 
-  const EMAILJS_PUBLIC_KEY  = 'nYGt8GPAjlNJxbUsr';   // e.g. 'abc123XYZ'
-  const EMAILJS_SERVICE_ID  = 'service_gmail';   // e.g. 'service_gmail'
-  const EMAILJS_TEMPLATE_ID = 'template_contact';  // e.g. 'template_contact'
+  const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abc123XYZ'
+  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_gmail'
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_contact'
 
   emailjs.init(EMAILJS_PUBLIC_KEY);
 
@@ -464,13 +464,4 @@
       })
       .catch((err) => {
         console.error('EmailJS error:', err);
-        document.getElementById('errorMsg').textContent = '❌ Something went wrong. Please email us directly at admosbah@gmail.com';
-        document.getElementById('errorMsg').style.display = 'block';
-        document.getElementById('successMsg').style.display = 'none';
-        btn.disabled = false;
-        btnText.textContent = 'Send Message ✉️';
-      });
-  }
-</script>
-</body>
-</html>
+        document.getElementById('errorMsg').te

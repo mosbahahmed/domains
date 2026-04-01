@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9642K0M4P1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9642K0M4P1');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PremiumDomains.io — Exclusive Domain Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --violet: #5B21FF;
+    --violet-mid: #7C3AFF;
+    --indigo: #3B0FA0;
+    --pink: #FF3CAC;
+    --cyan: #00F0FF;
+    --gold: #FFD166;
+    --white: #FFFFFF;
+    --off-white: #F0EDFF;
+    --glass: rgba(255,255,255,0.07);
+    --glass-border: rgba(255,255,255,0.15);
+    --text-muted: rgba(255,255,255,0.55);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #0A0520;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* ── BACKGROUND ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(91,33,255,0.45) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 85% 20%, rgba(255,60,172,0.25) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 80% at 50% 90%, rgba(0,240,255,0.12) 0%, transparent 60%),
+      #0A0520;
+    pointer-events: none;
+  }
+
+  /* grid dots */
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    backdrop-filter: blur(18px);
+    background: rgba(10,5,32,0.7);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem;
+    text-decoration: none; color: var(--white);
+  }
+
+  .nav-logo-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--violet), var(--pink));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 800;
+  }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none; font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    padding: 10px 26px; border-radius: 6px;
+    border: 1.5px solid var(--violet-mid);
+    color: var(--white); text-decoration: none; font-size: 0.9rem;
+    font-family: 'Syne', sans-serif; font-weight: 600;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .nav-cta:hover { background: var(--violet); border-color: var(--violet); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 60px 80px;
+    gap: 60px;
+  }
+
+  .hero-left { flex: 1; max-width: 600px; }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--cyan);
+    margin-bottom: 20px;
+    padding: 6px 16px; border-radius: 100px;
+    border: 1px solid rgba(0,240,255,0.3);
+    background: rgba(0,240,255,0.07);
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 800; line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(90deg, var(--violet-mid), var(--pink), var(--cyan));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem; color: var(--text-muted);
+    line-height: 1.75; max-width: 480px; margin-bottom: 40px;
+  }
+
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    padding: 14px 32px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--violet), var(--violet-mid));
+    color: var(--white); text-decoration: none;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem;
+    border: none; cursor: pointer;
+    box-shadow: 0 0 30px rgba(91,33,255,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(91,33,255,0.7); }
+
+  .btn-ghost {
+    display: flex; align-items: center; gap: 10px;
+    color: var(--white); text-decoration: none;
+    font-size: 0.95rem; font-weight: 500;
+    transition: gap 0.2s;
+  }
+  .btn-ghost:hover { gap: 14px; }
+  .btn-ghost-icon {
+    width: 42px; height: 42px; border-radius: 50%;
+    border: 1.5px solid var(--glass-border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+  }
+
+  /* stats row */
+  .hero-stats {
+    display: flex; gap: 40px; margin-top: 60px;
+    padding-top: 40px; border-top: 1px solid var(--glass-border);
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-num {
+    font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+    background: linear-gradient(90deg, var(--white), var(--off-white));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* hero right – floating cards */
+  .hero-right {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    position: relative; min-height: 400px;
+  }
+
+  .float-card {
+    position: absolute;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    border-radius: 14px;
+    padding: 18px 22px;
+    font-size: 0.82rem;
+  }
+
+  .float-card.card-1 { top: 10%; left: 0; animation: float 4s ease-in-out infinite; }
+  .float-card.card-2 { top: 40%; right: 0; animation: float 5s ease-in-out infinite 1s; }
+  .float-card.card-3 { bottom: 10%; left: 15%; animation: float 3.5s ease-in-out infinite 0.5s; }
+
+  .float-card .domain-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+  .float-card .domain-price { color: var(--gold); font-weight: 500; }
+  .float-card .domain-badge {
+    display: inline-block; margin-top: 8px;
+    font-size: 0.7rem; padding: 3px 10px; border-radius: 100px;
+    background: rgba(0,240,255,0.15); color: var(--cyan);
+    border: 1px solid rgba(0,240,255,0.3);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  /* ── FILTER BAR ── */
+  .filters-section {
+    position: relative; z-index: 1;
+    padding: 20px 60px 0;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.85rem;
+    color: var(--text-muted); margin-right: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 20px; border-radius: 100px; border: 1.5px solid var(--glass-border);
+    background: var(--glass); color: var(--text-muted);
+    font-size: 0.82rem; cursor: pointer; transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    border-color: var(--violet-mid); color: var(--white);
+    background: rgba(91,33,255,0.2);
+  }
+
+  /* ── DOMAINS GRID ── */
+  .domains-section {
+    position: relative; z-index: 1;
+    padding: 50px 60px 100px;
+  }
+
+  .section-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800;
+  }
+  .section-title span { color: var(--violet-mid); }
+
+  .domain-count {
+    font-size: 0.85rem; color: var(--text-muted);
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 6px 16px; border-radius: 100px;
+  }
+
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+
+  /* ── DOMAIN CARD ── */
+  .domain-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    position: relative;
+    overflow: hidden;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  .domain-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--violet), var(--pink));
+    opacity: 0; transition: opacity 0.25s;
+  }
+
+  .domain-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(124,58,255,0.5);
+    box-shadow: 0 20px 60px rgba(91,33,255,0.2);
+  }
+  .domain-card:hover::before { opacity: 1; }
+
+  /* premium card */
+  .domain-card.premium {
+    border-color: rgba(255,209,102,0.3);
+    background: linear-gradient(135deg, rgba(255,209,102,0.07), rgba(91,33,255,0.07));
+  }
+  .domain-card.premium::before {
+    background: linear-gradient(90deg, var(--gold), var(--pink));
+    opacity: 1;
+  }
+
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+
+  .card-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge {
+    font-size: 0.68rem; font-weight: 500; padding: 3px 10px; border-radius: 100px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .badge-category {
+    background: rgba(91,33,255,0.25); color: #B89DFF;
+    border: 1px solid rgba(91,33,255,0.3);
+  }
+  .badge-premium {
+    background: rgba(255,209,102,0.2); color: var(--gold);
+    border: 1px solid rgba(255,209,102,0.3);
+  }
+  .badge-ai {
+    background: rgba(0,240,255,0.15); color: var(--cyan);
+    border: 1px solid rgba(0,240,255,0.3);
+  }
+  .badge-local {
+    background: rgba(255,60,172,0.15); color: #FF8CE0;
+    border: 1px solid rgba(255,60,172,0.25);
+  }
+
+  .card-domain {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 1.1rem; color: var(--white);
+    word-break: break-word; line-height: 1.3;
+  }
+
+  .card-keywords {
+    font-size: 0.78rem; color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .card-keywords strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+
+  .card-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: auto; padding-top: 14px;
+    border-top: 1px solid var(--glass-border);
+  }
+
+  .card-price {
+    font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800;
+  }
+  .card-price.premium-price { color: var(--gold); }
+  .card-price.standard-price { color: var(--white); }
+
+  .card-price-sub {
+    font-size: 0.72rem; color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif; font-weight: 400;
+  }
+
+  .btn-buy {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 11px 22px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--violet), var(--violet-mid));
+    color: var(--white); text-decoration: none;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem;
+    border: none; cursor: pointer;
+    box-shadow: 0 0 20px rgba(91,33,255,0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+  }
+  .btn-buy:hover { transform: translateY(-1px); box-shadow: 0 0 35px rgba(91,33,255,0.55); }
+
+  .domain-card.premium .btn-buy {
+    background: linear-gradient(135deg, #c69500, var(--gold));
+    color: #0A0520;
+    box-shadow: 0 0 20px rgba(255,209,102,0.3);
+  }
+  .domain-card.premium .btn-buy:hover { box-shadow: 0 0 40px rgba(255,209,102,0.5); }
+
+  /* ── TRUST SECTION ── */
+  .trust-section {
+    position: relative; z-index: 1;
+    padding: 60px;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 20px 32px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+  }
+
+  .trust-icon { font-size: 1.8rem; }
+  .trust-text h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; }
+  .trust-text p { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* ── FOOTER ── */
+  footer {
+    position: relative; z-index: 1;
+    text-align: center; padding: 40px 60px;
+    color: var(--text-muted); font-size: 0.82rem;
+  }
+  footer a { color: var(--violet-mid); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { flex-direction: column; padding: 100px 20px 60px; }
+    .hero-right { display: none; }
+    .hero-stats { gap: 24px; flex-wrap: wrap; }
+    .filters-section { padding: 20px 20px 0; }
+    .domains-section { padding: 40px 20px 80px; }
+    .domains-grid { grid-template-columns: 1fr; }
+    .trust-section { padding: 40px 20px; }
+    footer { padding: 30px 20px; }
+  }
+
+  /* ── ANIMATION ── */
+  .fade-up {
+    opacity: 0; transform: translateY(30px);
+    animation: fadeUp 0.7s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up:nth-child(1) { animation-delay: 0.1s; }
+  .fade-up:nth-child(2) { animation-delay: 0.2s; }
+  .fade-up:nth-child(3) { animation-delay: 0.3s; }
+  .fade-up:nth-child(4) { animation-delay: 0.4s; }
+  .fade-up:nth-child(5) { animation-delay: 0.5s; }
+
+  /* search bar */
+  .search-wrap {
+    position: relative; z-index: 1;
+    padding: 0 60px; margin-bottom: 10px;
+  }
+  .search-inner {
+    position: relative; max-width: 520px;
+  }
+  .search-inner input {
+    width: 100%; padding: 14px 20px 14px 48px;
+    background: var(--glass); border: 1.5px solid var(--glass-border);
+    border-radius: 10px; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .search-inner input::placeholder { color: var(--text-muted); }
+  .search-inner input:focus { border-color: var(--violet-mid); }
+  .search-icon {
+    position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+    color: var(--text-muted); font-size: 1rem;
+  }
+  @media (max-width: 768px) {
+    .search-wrap { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">D</div>
+    DomainVault
+  </a>
+  <ul class="nav-links">
+    <li><a href="#domains">Portfolio</a></li>
+    <li><a href="#trust">Why Us</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <a href="#domains" class="nav-cta">Browse Domains</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag fade-up">🌐 Premium Domain Portfolio</div>
+    <h1 class="fade-up">Secure Your <span>Digital Address</span> Before Someone Else Does</h1>
+    <p class="hero-desc fade-up">
+      Hand-picked, high-value domain names across AI, local services, and niche markets.
+      Each domain is keyword-rich, brandable, and ready to power your next venture.
+    </p>
+    <div class="hero-actions fade-up">
+      <span style="font-size:0.9rem; color:var(--text-muted);">🔒 Secured via Afternic</span>
+    </div>
+    <div class="hero-stats fade-up">
+      <div class="stat-item">
+        <span class="stat-num">27</span>
+        <span class="stat-label">Premium Domains</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$500</span>
+        <span class="stat-label">Starting Price</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Afternic Secured</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="float-card card-1">
+      <div class="domain-name">kansascitygpt.com</div>
+      <div class="domain-price">$500 USD</div>
+      <div class="domain-badge">AI · Local</div>
+    </div>
+    <div class="float-card card-2">
+      <div class="domain-name">elmuo.com</div>
+      <div class="domain-price">$5,000 USD</div>
+      <div class="domain-badge">⭐ Premium</div>
+    </div>
+    <div class="float-card card-3">
+      <div class="domain-name">petsittingdenver.com</div>
+      <div class="domain-price">$500 USD</div>
+      <div class="domain-badge">Local Services</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- DOMAINS GRID -->
+<section class="domains-section" id="domains">
+  <div class="section-header">
+    <h2 class="section-title">Our <span>Domain</span> Portfolio</h2>
+    <span class="domain-count" id="domainCount">27 domains</span>
+  </div>
+  <div class="domains-grid" id="domainsGrid">
+    <!-- JS renders cards here -->
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section" id="trust">
+  <div class="trust-item">
+    <div class="trust-icon">🔒</div>
+    <div class="trust-text">
+      <h4>Escrow Protected</h4>
+      <p>All transfers via Afternic's secure escrow</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">⚡</div>
+    <div class="trust-text">
+      <h4>Fast Transfer</h4>
+      <p>Domain pushed within 24–48 hours</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🌍</div>
+    <div class="trust-text">
+      <h4>Global Buyers</h4>
+      <p>Afternic reaches 100M+ potential buyers</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">💬</div>
+    <div class="trust-text">
+      <h4>Make an Offer</h4>
+      <p>Open to negotiation on bulk purchases</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 DomainVault Portfolio · All domains listed on <a href="https://www.afternic.com" target="_blank">Afternic.com</a> · Secure payments guaranteed</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const domains = [
+  {
+    name: "elmuo.com",
+    price: 5000,
+    premium: true,
+    category: ["premium"],
+    keywords: ["Brandable short domain", "unique 5-letter .com", "startup brand name", "tech company name", "memorable domain"],
+    description: "Ultra-premium short .com — perfect for a tech startup, SaaS brand, or international business looking for a short, punchy, memorable identity."
+  },
+  {
+    name: "kansascitygpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Kansas City AI services", "GPT chatbot local", "AI business Kansas City", "ChatGPT local platform"],
+    description: "Geo-targeted AI domain — ideal for a local AI consulting firm, GPT-powered city guide, or municipal AI platform in Kansas City."
+  },
+  {
+    name: "jerseycitygpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Jersey City AI", "GPT chatbot New Jersey", "AI services Jersey City", "local GPT platform NJ"],
+    description: "AI + geo combo — prime for an AI agency or tech startup serving Jersey City and the greater NJ metro area."
+  },
+  {
+    name: "stpetersburggpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["St. Petersburg AI chatbot", "GPT Florida", "AI services St. Pete", "ChatGPT St. Petersburg"],
+    description: "Capitalize on the AI boom in Florida — perfect for a St. Pete AI consulting, automation, or SaaS company."
+  },
+  {
+    name: "stpaulgpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["St. Paul AI services", "GPT Minnesota", "AI chatbot St. Paul", "local AI company MN"],
+    description: "Minnesota AI domain — target businesses and government agencies in St. Paul needing AI automation solutions."
+  },
+  {
+    name: "stlouisgpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["St. Louis AI", "GPT Missouri", "AI services St. Louis", "ChatGPT St. Louis business"],
+    description: "St. Louis AI & GPT hub — great for a Midwest AI agency, developer, or SaaS targeting the St. Louis market."
+  },
+  {
+    name: "santaanagpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Santa Ana AI services", "GPT Orange County", "AI chatbot California", "AI company Santa Ana"],
+    description: "Southern California AI domain — serve the fast-growing Santa Ana and Orange County tech market with AI products."
+  },
+  {
+    name: "pittsburghgpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Pittsburgh AI", "GPT Pennsylvania", "AI services Pittsburgh", "ChatGPT Pittsburgh tech"],
+    description: "Pittsburgh is a rising AI hub — ideal for an AI startup, CMU spin-off, or enterprise automation firm in the Steel City."
+  },
+  {
+    name: "jacksonvillegpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Jacksonville AI services", "GPT Florida", "AI chatbot Jacksonville", "AI business North Florida"],
+    description: "Florida's largest city, Jacksonville, is ripe for AI adoption — perfect for a local AI agency or SaaS product."
+  },
+  {
+    name: "indianapolisgpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Indianapolis AI", "GPT Indiana", "Indy AI chatbot", "AI services Indianapolis"],
+    description: "Indianapolis is a growing Midwest tech hub — capture the local AI market with this keyword-rich geo+GPT domain."
+  },
+  {
+    name: "georgiagpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Georgia AI services", "GPT Atlanta", "AI business Georgia", "ChatGPT Georgia state"],
+    description: "Statewide AI domain for Georgia — ideal for an AI agency, government contractor, or tech company serving the whole state."
+  },
+  {
+    name: "iowagpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Iowa AI services", "GPT Iowa", "AI chatbot Iowa", "artificial intelligence Iowa"],
+    description: "Underserved Midwest AI market — perfect for an Iowa-based AI consulting firm or agricultural AI startup."
+  },
+  {
+    name: "massachusettsgpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Massachusetts AI", "GPT Boston", "AI services MA", "ChatGPT Massachusetts"],
+    description: "Massachusetts is a top AI/biotech state — this domain is perfect for an AI company targeting Boston and beyond."
+  },
+  {
+    name: "minnesotagpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Minnesota AI services", "GPT Minneapolis", "AI chatbot MN", "artificial intelligence Minnesota"],
+    description: "Twin Cities AI domain — ideal for an AI agency or SaaS startup serving Minnesota's healthcare and finance sectors."
+  },
+  {
+    name: "utahgpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Utah AI services", "GPT Salt Lake City", "AI startup Utah", "ChatGPT Utah tech"],
+    description: "Utah's Silicon Slopes is booming — capture AI demand with this clean, memorable state-level GPT domain."
+  },
+  {
+    name: "alabamagpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Alabama AI services", "GPT Birmingham", "AI chatbot Alabama", "AI company AL"],
+    description: "First-mover AI domain for Alabama — perfect for a regional AI firm or government tech contractor in the Southeast."
+  },
+  {
+    name: "coloradogpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Colorado AI services", "GPT Denver", "AI startup Colorado", "ChatGPT Colorado"],
+    description: "Colorado's tech scene is thriving — target Denver's AI-forward market with this strong geo+AI domain."
+  },
+  {
+    name: "delawaregpt.com",
+    price: 500,
+    premium: false,
+    category: ["ai"],
+    keywords: ["Delaware AI services", "GPT Delaware", "AI chatbot Delaware", "AI company DE"],
+    description: "Delaware incorporation + AI services — a unique play for a legal-tech AI firm or corporate AI solutions provider."
+  },
+  {
+    name: "dogsitterhouston.com",
+    price: 500,
+    premium: false,
+    category: ["pet", "local"],
+    keywords: ["dog sitter Houston TX", "Houston dog boarding", "dog walker Houston", "pet sitter near me Houston"],
+    description: "High-search-volume local pet care domain — Houston is the 4th largest US city with massive demand for dog sitting services."
+  },
+  {
+    name: "petsittingdenver.com",
+    price: 500,
+    premium: false,
+    category: ["pet", "local"],
+    keywords: ["pet sitting Denver CO", "Denver dog boarding", "in-home pet sitter Denver", "cat and dog sitter Denver"],
+    description: "Denver's pet-loving culture makes this a goldmine — rank for 'pet sitting Denver' and capture thousands of searches/month."
+  },
+  {
+    name: "catsittersanfrancisco.com",
+    price: 500,
+    premium: false,
+    category: ["pet", "local"],
+    keywords: ["cat sitter San Francisco", "SF cat boarding", "in-home cat care SF", "cat sitting Bay Area"],
+    description: "San Francisco has one of the highest rates of cat ownership — this exact-match domain targets a lucrative, underserved niche."
+  },
+  {
+    name: "lawncareserviceatlanta.com",
+    price: 500,
+    premium: false,
+    category: ["local"],
+    keywords: ["lawn care Atlanta GA", "lawn mowing service Atlanta", "yard maintenance Atlanta", "landscaping Atlanta"],
+    description: "Atlanta's suburban sprawl drives huge demand for lawn care — this geo-targeted domain ranks immediately for high-intent local searches."
+  },
+  {
+    name: "warungbeads.com",
+    price: 500,
+    premium: false,
+    category: ["local"],
+    keywords: ["bead store online", "artisan beads", "handmade jewelry beads", "bead shop warung"],
+    description: "Unique and brandable — 'Warung' (meaning small shop in Indonesian) combined with beads makes a memorable, niche e-commerce brand name."
+  },
+  {
+    name: "thousandoakschiropractic.com",
+    price: 500,
+    premium: false,
+    category: ["chiro", "local"],
+    keywords: ["chiropractor Thousand Oaks CA", "chiropractic care Thousand Oaks", "back pain Thousand Oaks", "spine specialist Thousand Oaks"],
+    description: "Thousand Oaks is an affluent SoCal suburb — this exact-match domain instantly ranks for high-value chiropractic searches."
+  },
+  {
+    name: "northlasvegaschiropractic.com",
+    price: 500,
+    premium: false,
+    category: ["chiro", "local"],
+    keywords: ["chiropractor North Las Vegas NV", "chiropractic North LV", "back pain North Las Vegas", "neck pain chiropractor NLV"],
+    description: "North Las Vegas is one of Nevada's fastest-growing cities — capture the local chiropractic market before competitors do."
+  },
+  {
+    name: "saintpaulchiropractic.com",
+    price: 500,
+    premium: false,
+    category: ["chiro", "local"],
+    keywords: ["chiropractor Saint Paul MN", "chiropractic care St. Paul", "back adjustment Saint Paul", "spine health St. Paul MN"],
+    description: "Exact-match domain for Saint Paul chiropractic searches — a ready-to-rank asset for any Minnesota chiropractic practice."
+  },
+  {
+    name: "westvalleycitychiropractic.com",
+    price: 500,
+    premium: false,
+    category: ["chiro", "local"],
+    keywords: ["chiropractor West Valley City UT", "chiropractic Utah", "back pain West Valley City", "spine care WVC Utah"],
+    description: "West Valley City is Utah's 2nd largest city — this domain targets the high-intent 'chiropractor near me' searches in the SLC metro."
+  }
+];
+
+function renderDomains() {
+  const grid = document.getElementById('domainsGrid');
+  const countEl = document.getElementById('domainCount');
+
+  // Sort: premium first
+  let filtered = [...domains].sort((a, b) => (b.premium ? 1 : 0) - (a.premium ? 1 : 0));
+
+  countEl.textContent = `${filtered.length} domain${filtered.length !== 1 ? 's' : ''}`;
+
+  grid.innerHTML = filtered.map(d => {
+    const afternicUrl = `https://www.afternic.com/domains/${d.name}`;
+    const isPremium = d.premium;
+
+    // Determine badge type
+    const badges = [];
+    if (isPremium) badges.push(`<span class="badge badge-premium">⭐ Premium</span>`);
+    if (d.category.includes('ai')) badges.push(`<span class="badge badge-ai">🤖 AI</span>`);
+    if (d.category.includes('local') || d.category.includes('chiro') || d.category.includes('pet'))
+      badges.push(`<span class="badge badge-local">📍 Local</span>`);
+    if (!isPremium && !d.category.includes('ai') && !d.category.includes('local') && !d.category.includes('pet') && !d.category.includes('chiro'))
+      badges.push(`<span class="badge badge-category">Niche</span>`);
+    if (d.category.includes('pet')) badges.push(`<span class="badge badge-category">🐾 Pet</span>`);
+    if (d.category.includes('chiro')) badges.push(`<span class="badge badge-category">🏥 Health</span>`);
+
+    return `
+      <div class="domain-card ${isPremium ? 'premium' : ''}">
+        <div class="card-top">
+          <div class="card-badges">${badges.join('')}</div>
+        </div>
+        <div class="card-domain">${d.name}</div>
+        <div class="card-keywords">
+          <strong>Keywords:</strong> ${d.keywords.slice(0, 3).join(' · ')}
+        </div>
+        <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.6;">${d.description}</p>
+        <div class="card-bottom">
+          <div>
+            <div class="card-price ${isPremium ? 'premium-price' : 'standard-price'}">$${d.price.toLocaleString()}</div>
+            <div class="card-price-sub">Buy It Now · USD</div>
+          </div>
+          <a href="${afternicUrl}" target="_blank" class="btn-buy">Buy Now ↗</a>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Init
+renderDomains();
+</script>
+</body>
+</html>

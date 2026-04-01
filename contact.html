@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9642K0M4P1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9642K0M4P1');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — DomainVault</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+  :root {
+    --violet: #5B21FF;
+    --violet-mid: #7C3AFF;
+    --pink: #FF3CAC;
+    --cyan: #00F0FF;
+    --gold: #FFD166;
+    --white: #FFFFFF;
+    --off-white: #F0EDFF;
+    --glass: rgba(255,255,255,0.07);
+    --glass-border: rgba(255,255,255,0.15);
+    --text-muted: rgba(255,255,255,0.55);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: #0A0520;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(91,33,255,0.45) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 85% 20%, rgba(255,60,172,0.25) 0%, transparent 55%),
+      radial-gradient(ellipse 70% 80% at 50% 90%, rgba(0,240,255,0.12) 0%, transparent 60%),
+      #0A0520;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 60px;
+    backdrop-filter: blur(18px);
+    background: rgba(10,5,32,0.7);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.3rem;
+    text-decoration: none; color: var(--white);
+  }
+
+  .nav-logo-icon {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--violet), var(--pink));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 800;
+  }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none; font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+  .nav-cta {
+    padding: 10px 26px; border-radius: 6px;
+    border: 1.5px solid var(--violet-mid);
+    color: var(--white); text-decoration: none; font-size: 0.9rem;
+    font-family: 'Syne', sans-serif; font-weight: 600;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .nav-cta:hover { background: var(--violet); border-color: var(--violet); }
+
+  /* PAGE */
+  .page {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 120px 20px 80px;
+  }
+
+  .contact-wrapper {
+    width: 100%; max-width: 980px;
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px;
+    align-items: start;
+  }
+
+  /* LEFT INFO */
+  .contact-info {
+    display: flex; flex-direction: column; gap: 32px;
+  }
+
+  .info-tag {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--cyan);
+    padding: 6px 16px; border-radius: 100px;
+    border: 1px solid rgba(0,240,255,0.3);
+    background: rgba(0,240,255,0.07);
+    width: fit-content;
+  }
+
+  .info-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800; line-height: 1.15;
+  }
+
+  .info-title span {
+    background: linear-gradient(90deg, var(--violet-mid), var(--pink));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .info-desc {
+    font-size: 0.95rem; color: var(--text-muted); line-height: 1.75;
+  }
+
+  .info-items { display: flex; flex-direction: column; gap: 16px; }
+
+  .info-item {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+  }
+
+  .info-item-icon {
+    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(91,33,255,0.4), rgba(255,60,172,0.2));
+    border: 1px solid rgba(124,58,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .info-item-text h4 {
+    font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700;
+    margin-bottom: 2px;
+  }
+  .info-item-text p {
+    font-size: 0.8rem; color: var(--text-muted);
+  }
+
+  /* FORM */
+  .contact-form-wrap {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-form-wrap::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--violet), var(--pink), var(--cyan));
+  }
+
+  .form-title {
+    font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800;
+    margin-bottom: 6px;
+  }
+
+  .form-subtitle {
+    font-size: 0.82rem; color: var(--text-muted); margin-bottom: 28px;
+  }
+
+  .form-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+
+  .form-group {
+    display: flex; flex-direction: column; gap: 7px;
+  }
+  .form-group.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.7);
+    letter-spacing: 0.03em;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1.5px solid var(--glass-border);
+    border-radius: 10px;
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    -webkit-appearance: none;
+  }
+
+  input::placeholder, textarea::placeholder { color: var(--text-muted); }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--violet-mid);
+    background: rgba(124,58,255,0.08);
+  }
+
+  select option { background: #1a0d40; color: var(--white); }
+
+  textarea { resize: vertical; min-height: 120px; }
+
+  .btn-submit {
+    width: 100%; margin-top: 20px;
+    padding: 15px 32px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--violet), var(--violet-mid));
+    color: var(--white); border: none; cursor: pointer;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
+    box-shadow: 0 0 30px rgba(91,33,255,0.45);
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 0 50px rgba(91,33,255,0.65);
+  }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  /* SUCCESS / ERROR */
+  .alert {
+    display: none; margin-top: 18px;
+    padding: 14px 18px; border-radius: 10px;
+    font-size: 0.88rem; line-height: 1.5;
+  }
+  .alert.success {
+    background: rgba(0,240,100,0.1);
+    border: 1px solid rgba(0,240,100,0.3);
+    color: #5fffaa;
+  }
+  .alert.error {
+    background: rgba(255,60,100,0.1);
+    border: 1px solid rgba(255,60,100,0.3);
+    color: #ff8caa;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .contact-wrapper { grid-template-columns: 1fr; }
+    .contact-form-wrap { padding: 28px 20px; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">D</div>
+    DomainVault
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Portfolio</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="index.html" class="nav-cta">Browse Domains</a>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+  <div class="contact-wrapper">
+
+    <!-- LEFT -->
+    <div class="contact-info">
+      <div class="info-tag">📬 Get In Touch</div>
+      <h1 class="info-title">Interested in a <span>Domain?</span></h1>
+      <p class="info-desc">
+        Have questions about a domain, want to make an offer, or interested in buying multiple domains in bulk? Send us a message and we'll get back to you within 24 hours.
+      </p>
+      <div class="info-items">
+        <div class="info-item">
+          <div class="info-item-icon">⚡</div>
+          <div class="info-item-text">
+            <h4>Fast Response</h4>
+            <p>We reply within 24 hours on business days</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">🔒</div>
+          <div class="info-item-text">
+            <h4>Secure Transfer</h4>
+            <p>All sales processed via Afternic escrow</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">💼</div>
+          <div class="info-item-text">
+            <h4>Bulk Discounts</h4>
+            <p>Buying multiple domains? Let's talk a deal</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon">✉️</div>
+          <div class="info-item-text">
+            <h4>Email</h4>
+            <p>admosbah@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form-wrap">
+      <div class="form-title">Send a Message</div>
+      <div class="form-subtitle">All fields are required</div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" placeholder="John" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" placeholder="Smith" required>
+        </div>
+        <div class="form-group full">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group full">
+          <label for="domain">Domain You're Interested In</label>
+          <select id="domain" required>
+            <option value="" disabled selected>Select a domain…</option>
+            <option>elmuo.com — $5,000</option>
+            <option>kansascitygpt.com — $500</option>
+            <option>jerseycitygpt.com — $500</option>
+            <option>stpetersburggpt.com — $500</option>
+            <option>stpaulgpt.com — $500</option>
+            <option>stlouisgpt.com — $500</option>
+            <option>santaanagpt.com — $500</option>
+            <option>pittsburghgpt.com — $500</option>
+            <option>jacksonvillegpt.com — $500</option>
+            <option>indianapolisgpt.com — $500</option>
+            <option>georgiagpt.com — $500</option>
+            <option>iowagpt.com — $500</option>
+            <option>massachusettsgpt.com — $500</option>
+            <option>minnesotagpt.com — $500</option>
+            <option>utahgpt.com — $500</option>
+            <option>alabamagpt.com — $500</option>
+            <option>coloradogpt.com — $500</option>
+            <option>delawaregpt.com — $500</option>
+            <option>dogsitterhouston.com — $500</option>
+            <option>petsittingdenver.com — $500</option>
+            <option>catsittersanfrancisco.com — $500</option>
+            <option>lawncareserviceatlanta.com — $500</option>
+            <option>warungbeads.com — $500</option>
+            <option>thousandoakschiropractic.com — $500</option>
+            <option>northlasvegaschiropractic.com — $500</option>
+            <option>saintpaulchiropractic.com — $500</option>
+            <option>westvalleycitychiropractic.com — $500</option>
+            <option>Multiple domains (bulk inquiry)</option>
+            <option>Other / General question</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label for="offer">Your Offer (USD) — optional</label>
+          <input type="text" id="offer" placeholder="e.g. $450 or leave blank for listed price">
+        </div>
+        <div class="form-group full">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Tell us about your project or ask any questions…" required></textarea>
+        </div>
+      </div>
+
+      <button class="btn-submit" id="submitBtn" onclick="sendEmail()">
+        <span id="btnText">Send Message ✉️</span>
+      </button>
+
+      <div class="alert success" id="successMsg">
+        ✅ Your message has been sent! We'll get back to you within 24 hours.
+      </div>
+      <div class="alert error" id="errorMsg">
+        ❌ Something went wrong. Please email us directly at admosbah@gmail.com
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── EmailJS Setup ──
+  // To activate email sending:
+  // 1. Go to https://www.emailjs.com and create a free account
+  // 2. Create an Email Service (Gmail) and note your Service ID
+  // 3. Create an Email Template with these variables:
+  //    {{from_name}}, {{from_email}}, {{domain}}, {{offer}}, {{message}}
+  //    Set "To Email" to admosbah@gmail.com in the template
+  // 4. Get your Public Key from Account > API Keys
+  // 5. Replace the placeholders below with your real IDs
+
+  const EMAILJS_PUBLIC_KEY  = 'nYGt8GPAjlNJxbUsr';   // e.g. 'abc123XYZ'
+  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_gmail'
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_contact'
+
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  function sendEmail() {
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName  = document.getElementById('lastName').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const domain    = document.getElementById('domain').value;
+    const offer     = document.getElementById('offer').value.trim();
+    const message   = document.getElementById('message').value.trim();
+
+    // Basic validation
+    if (!firstName || !lastName || !email || !domain || !message) {
+      document.getElementById('errorMsg').textContent = '⚠️ Please fill in all required fields.';
+      document.getElementById('errorMsg').style.display = 'block';
+      document.getElementById('successMsg').style.display = 'none';
+      return;
+    }
+
+    const btn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    btn.disabled = true;
+    btnText.textContent = 'Sending…';
+
+    const templateParams = {
+      from_name:  `${firstName} ${lastName}`,
+      from_email: email,
+      domain:     domain,
+      offer:      offer || 'Not specified',
+      message:    message,
+      to_email:   'admosbah@gmail.com'
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(() => {
+        document.getElementById('successMsg').style.display = 'block';
+        document.getElementById('errorMsg').style.display = 'none';
+        btnText.textContent = '✅ Sent!';
+        // Clear form
+        ['firstName','lastName','email','offer','message'].forEach(id => document.getElementById(id).value = '');
+        document.getElementById('domain').selectedIndex = 0;
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+        document.getElementById('errorMsg').textContent = '❌ Something went wrong. Please email us directly at admosbah@gmail.com';
+        document.getElementById('errorMsg').style.display = 'block';
+        document.getElementById('successMsg').style.display = 'none';
+        btn.disabled = false;
+        btnText.textContent = 'Send Message ✉️';
+      });
+  }
+</script>
+</body>
+</html>

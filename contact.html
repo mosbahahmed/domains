@@ -13,8 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact — DomainVault</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
   :root {
     --violet: #5B21FF;
@@ -324,13 +322,7 @@
             <p>Buying multiple domains? Let's talk a deal</p>
           </div>
         </div>
-        <div class="info-item">
-          <div class="info-item-icon">✉️</div>
-          <div class="info-item-text">
-            <h4>Email</h4>
-            <p>admosbah@gmail.com</p>
-          </div>
-        </div>
+
       </div>
     </div>
 
@@ -405,7 +397,7 @@
         ✅ Your message has been sent! We'll get back to you within 24 hours.
       </div>
       <div class="alert error" id="errorMsg">
-        ❌ Something went wrong. Please email us directly at admosbah@gmail.com
+        ❌ Something went wrong. Please email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afcecbc2c0dccdcec7efc8c2cec6c381ccc0c2">[email&#160;protected]</a>
       </div>
     </div>
 
@@ -413,23 +405,15 @@
 </div>
 
 <script>
-  // ── EmailJS Setup ──
-  // To activate email sending:
-  // 1. Go to https://www.emailjs.com and create a free account
-  // 2. Create an Email Service (Gmail) and note your Service ID
-  // 3. Create an Email Template with these variables:
-  //    {{from_name}}, {{from_email}}, {{domain}}, {{offer}}, {{message}}
-  //    Set "To Email" to admosbah@gmail.com in the template
-  // 4. Get your Public Key from Account > API Keys
-  // 5. Replace the placeholders below with your real IDs
+  // ── Formspree Setup ──
+  // 1. Go to https://formspree.io and sign up for free
+  // 2. Click "New Form" and enter admosbah@gmail.com as the email
+  // 3. Copy your Form ID (looks like: xpzgkrvw)
+  // 4. Replace YOUR_FORM_ID below with your actual Form ID
 
-  const EMAILJS_PUBLIC_KEY  = 'nYGt8GPAjlNJxbUsr';   // e.g. 'abc123XYZ'
-  const EMAILJS_SERVICE_ID  = 'service_gmail';   // e.g. 'service_gmail'
-  const EMAILJS_TEMPLATE_ID = 'template_jutabul';  // e.g. 'template_contact'
+  const FORMSPREE_ID = 'xgopzpdg'; // e.g. 'xpzgkrvw'
 
-  emailjs.init(EMAILJS_PUBLIC_KEY);
-
-  function sendEmail() {
+  async function sendEmail() {
     const firstName = document.getElementById('firstName').value.trim();
     const lastName  = document.getElementById('lastName').value.trim();
     const email     = document.getElementById('email').value.trim();
@@ -445,38 +429,42 @@
       return;
     }
 
-    const btn = document.getElementById('submitBtn');
+    const btn     = document.getElementById('submitBtn');
     const btnText = document.getElementById('btnText');
-    btn.disabled = true;
+    btn.disabled  = true;
     btnText.textContent = 'Sending…';
 
-    const templateParams = {
-      from_name:  `${firstName} ${lastName}`,
-      from_email: email,
-      domain:     domain,
-      offer:      offer || 'Not specified',
-      message:    message,
-      to_email:   'admosbah@gmail.com'
-    };
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name:    `${firstName} ${lastName}`,
+          email:   email,
+          domain:  domain,
+          offer:   offer || 'Not specified',
+          message: message
+        })
+      });
 
-    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-      .then(() => {
+      if (res.ok) {
         document.getElementById('successMsg').style.display = 'block';
-        document.getElementById('errorMsg').style.display = 'none';
+        document.getElementById('errorMsg').style.display   = 'none';
         btnText.textContent = '✅ Sent!';
-        // Clear form
         ['firstName','lastName','email','offer','message'].forEach(id => document.getElementById(id).value = '');
         document.getElementById('domain').selectedIndex = 0;
-      })
-      .catch((err) => {
-        console.error('EmailJS error:', err);
-        document.getElementById('errorMsg').textContent = '❌ Something went wrong. Please email us directly at admosbah@gmail.com';
-        document.getElementById('errorMsg').style.display = 'block';
-        document.getElementById('successMsg').style.display = 'none';
-        btn.disabled = false;
-        btnText.textContent = 'Send Message ✉️';
-      });
-  }
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      console.error('Formspree error:', err);
+      document.getElementById('errorMsg').textContent = '❌ Something went wrong. Please email us directly at admosbah@gmail.com';
+      document.getElementById('errorMsg').style.display   = 'block';
+      document.getElementById('successMsg').style.display = 'none';
+      btn.disabled = false;
+      btnText.textContent = 'Send Message ✉️';
+    }
+  }-e 
 </script>
 </body>
 </html>
